@@ -1,97 +1,28 @@
-https://drive.google.com/drive/folders/1AGqBYAYGByhk3Dq4y_3V0izG8J-O-SwG?usp=sharing
-
-import * as THREE from 'three'
-// const shapeVertices = [
-//     new THREE.Vector2(0, 0),
-//     new THREE.Vector2(6, 0),
-//     new THREE.Vector2(6, 1),
-//     new THREE.Vector2(1, 1),
-//     new THREE.Vector2(1, 7),
-//     new THREE.Vector2(3, 7),
-//     new THREE.Vector2(3, 8),
-//     new THREE.Vector2(1, 8),
-//     new THREE.Vector2(1, 10),
-//     new THREE.Vector2(0, 10),
-//   ];
-
-//   const shape = new THREE.Shape(shapeVertices);
-
-//   const extrudeSettings = {
-//     depth: 10,
-//     bevelEnabled: false, 
-//   };
-
-//   const geometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
-//   const material = new THREE.MeshBasicMaterial({ color: 0x808080,wireframe:true });
-//   const mesh = new THREE.Mesh(geometry, material);
-// export default mesh;
-
-export default function createAllWall(coordinates){// coordinates is an array of arrays of coordinates
-    let walls=[];
-coordinates.forEach((coordinate)=>{
-    
-    let shapeVertices = [];
-    coordinate.forEach((point)=>{
-        shapeVertices.push(new THREE.Vector2(point[0],point[1]));
-    })
-    
-      const shape = new THREE.Shape(shapeVertices);
-    
-      const extrudeSettings = {
-        depth: 10,
-        bevelEnabled: false, 
-      };
-    
-      const geometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
-      const material = new THREE.MeshBasicMaterial({ color: 0x808080,wireframe:true });
-      const mesh = new THREE.Mesh(geometry, material);
-      mesh.position.z=Math.random()*20;
-      mesh.position.x=0;
-      mesh.position.y=0;
-      walls.push(mesh);
-})
-    return walls;
-}
+Farewell and Best Wishes
 
 
+User
+Sign off mail while leaving the company
 
+ChatGPT
+Subject: Farewell and Best Wishes
 
+Dear [Recipient's Name],
 
-import './style.css'
-import * as THREE from 'three'
-import createAllWall from './wall.js'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-/**
- * Base
- */
-// Canvas
-const canvas = document.querySelector('canvas.webgl')
-const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
-})
-const scene = new THREE.Scene()
-const axesHelper = new THREE.AxesHelper( 5 );
-scene.add( axesHelper );
+I hope this email finds you well. I am reaching out to inform you that my time at [Company Name] has come to an end, and I will be leaving the organization on [Last Working Day]. It has been an incredible journey working with all of you, and I wanted to take a moment to express my deepest gratitude for the opportunities and experiences I have had during my tenure here.
 
-const walls = createAllWall([[[0,0],[6,0],[6,1],[1,1],[1,7],[3,7],[3,8],[1,8],[1,10],[0,10]],[[0,0],[5,0],[5,7],[0,7],[0,6],[4,6],[4,1],[0,1]]]);
+My time at [Company Name] has been filled with memorable moments, professional growth, and wonderful relationships. I have had the privilege of working with some of the most talented and inspiring individuals in the industry, and I am truly grateful for the knowledge and skills I have acquired through my interactions with each one of you.
 
-walls.forEach((wall)=>{
-    scene.add(wall);
-})
-const camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 500 );
-camera.position.set( 0, 0, 100 );
-camera.lookAt( 0, 0, 0 );
-const controls = new OrbitControls( camera,canvas);
-scene.add( camera );
+Please allow me to extend my heartfelt appreciation to my colleagues and team members for their support, collaboration, and friendship. It is the people that make an organization truly special, and I feel fortunate to have been a part of such an amazing group.
 
-renderer.setSize( window.innerWidth, window.innerHeight );
+I would also like to express my gratitude to [Supervisor/Manager's Name] and the leadership team for their guidance, mentorship, and trust in my abilities. Your unwavering support has been instrumental in my professional development, and I am truly grateful for the opportunities I have been given.
 
+As I move on to the next chapter of my career, I will cherish the memories and lessons I have gained at [Company Name]. While I am excited about the new challenges and opportunities that lie ahead, it is with a touch of sadness that I bid farewell to this remarkable organization.
 
-function animate() {
+I would like to stay connected with all of you and continue nurturing the friendships and professional relationships we have developed. Please feel free to reach out to me at [Personal Email/Contact Information] if you would like to keep in touch.
 
-	requestAnimationFrame( animate );
-	controls.update();
-	renderer.render( scene, camera );
+Once again, I want to express my heartfelt appreciation for the support, guidance, and camaraderie I have received during my time at [Company Name]. It has been an honor and a pleasure to work alongside each and every one of you, and I wish you all continued success and fulfillment in your future endeavors.
 
-}
-animate();
+Thank you once again for everything.
+
+Warmest regards,
